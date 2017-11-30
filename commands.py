@@ -44,7 +44,7 @@ def handle_updates(updates):
         try:
             text = update["message"]["text"]
             chat = update["message"]["chat"]["id"]
-            for command_name, command_value in COMMANDS:
+            for command_name, command_value in COMMANDS.items():
                 if text == command_name:
                     os.system("{}".format(command_name))
                     if (os.path.exists("./{}".format(command_name))):
