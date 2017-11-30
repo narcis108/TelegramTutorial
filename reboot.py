@@ -47,13 +47,12 @@ def handle_updates(updates):
             chat = update["message"]["chat"]["id"]
             items = db.get_items()
             if text == "/reboot":
-                os.system("shutdown -r now")
                 send_message("Reboting...", chat)
-            elif text in items:
-                db.delete_item(text)
-                items = db.get_items()
-                keyboard = build_keyboard(items)
-                send_message("Select an item to delete", chat, keyboard)
+                os.system("shutdown -r now")
+            elif text == "/temp":
+                os.system("/opt/vc/bin/vcgencmd measure_temp > temperature")
+                temp_file = open("./temperature")
+                print(temp_file)
             else:
                 db.add_item(text)
                 items = db.get_items()
