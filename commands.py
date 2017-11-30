@@ -9,7 +9,7 @@ URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 COMMANDS = {"/reboot": "shutdown -r now",
             "/temp": "/opt/vc/bin/vcgencmd measure_temp > temp",
-            "/cpuinfo": "less /cpu/proc > cpuinfo"
+            "/cpuinfo": "less /proc/cpuinfo > cpuinfo"
             }
 
 
