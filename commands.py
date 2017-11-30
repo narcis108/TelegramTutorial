@@ -8,6 +8,7 @@ TOKEN = "481861352:AAHC418jtyRpkSh1TLFGvk97xqHOVHX6MN0"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 COMMANDS = {"/reboot": "shutdown -r now",
+            "/shutdown": "shutdown now",
             "/temp": "/opt/vc/bin/vcgencmd measure_temp > temp",
             "/cpuinfo": "less /proc/cpuinfo > cpuinfo"
             }
