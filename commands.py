@@ -48,7 +48,7 @@ def handle_updates(updates):
                 if text == command_name:
                     os.system("{}".format(command_value))
                     if (os.path.exists("./{}".format(command_name))):
-                        file = open(command_value[1:])
+                        file = open(command_name[1:])
                         file_content = file.read()
                         send_message("{}".format(file_content), chat)
 
