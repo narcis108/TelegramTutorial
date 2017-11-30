@@ -48,8 +48,9 @@ def handle_updates(updates):
             if text == "/temp":
                 os.system("/opt/vc/bin/vcgencmd measure_temp > temperature")
                 temp_file = open("./temperature")
-                send_message("Your device temperature is", chat)
-                print(temp_file)
+                file_content = temp_file.read()
+                send_message("Your device temperature is : {}".format(file_content), chat)
+
         except KeyError:
             pass
 
