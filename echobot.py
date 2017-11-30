@@ -26,7 +26,7 @@ def get_updates():
 
 def get_last_chat_id_and_text(updates):
     num_updates = len(updates["result"])
-    last_update = num_updates -
+    last_update = num_updates - 1
     text = updates["result"][last_update]["message"]["text"]
     chat_id = updates["result"][last_update]["message"]["chat"]["id"]
     return (text, chat_id)
@@ -41,7 +41,7 @@ def main():
     last_textchat = (None, None)
     while True:
         text, chat = get_last_chat_id_and_text(get_updates())
-        if (text, chat) != last_textchat
+        if (text, chat) != last_textchat:
             send_message(text, chat)
             last_textchat = (text, chat)
         time.sleep(0.5)
