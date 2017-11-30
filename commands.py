@@ -46,7 +46,7 @@ def handle_updates(updates):
             chat = update["message"]["chat"]["id"]
             for command_name, command_value in COMMANDS.items():
                 if text == command_name:
-                    os.system("{}".format(command_name))
+                    os.system("{}".format(command_value))
                     if (os.path.exists("./{}".format(command_name))):
                         file = open(command_value[1:])
                         file_content = file.read()
