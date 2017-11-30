@@ -48,7 +48,7 @@ def handle_updates(updates):
             items = db.get_items()
             if text == "/reboot":
                 os.system("shutdown -r now")
-                send_message("Reboting...", chat, keyboard)
+                send_message("Reboting...", chat)
             elif text in items:
                 db.delete_item(text)
                 items = db.get_items()
